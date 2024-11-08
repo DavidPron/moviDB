@@ -7,17 +7,17 @@ async function fetchTodos() {
   try {
     const response = await fetch(apiUrl, {
       method: 'GET', // Указываем метод запроса
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
+      headers: {
+        'Content-Type': 'application/json',
+      },
       maxResults: 20,
       pageToken: 0,
     });
 
     // Проверяем, успешно ли завершился запрос
-    if (!response.ok) {
-      throw new Error(`Ошибка: ${response.status}`);
-    }
+    // if (!response.ok) {
+    //   throw new Error(`Ошибка: ${response.status}`);
+    // }
 
     // Получаем данные в формате JSON
     const data = await response.json();
